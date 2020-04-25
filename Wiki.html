@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CTO_Wiki</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<style>
+.myButton{
+  height: 25px;
+  width: 25px;
+  background-color: yellow;
+  border-radius: 50%;
+  display: inline-block;
+  float:left;
+}
+.myButton1{
+  height: 25px;
+  width: 25px;
+  background-color: yellow;
+  border-radius: 50%;
+  display: inline-block;
+  float:left;
+}
+.myButton2{
+  height: 25px;
+  width: 25px;
+  background-color: yellow;
+  border-radius: 50%;
+  display: inline-block;
+  float:left;
+}
+.myButton3{
+  height: 25px;
+  width: 25px;
+  background-color: yellow;
+  border-radius: 50%;
+  display: inline-block;
+  float:left;
+}
+
+.column {
+  float: left;
+  width: 90%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+.column1 {
+  float: left;
+  width: 10%;
+
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@keyframes blink {
+   80% { border-color: #ff0000; }
+}
+.card{ /*or other element you want*/
+    animation: blink .5s step-end infinite alternate;
+}
+
+hr.rounded {
+  border-top: 4px solid #bbb;
+  border-radius: 5px;
+}
+
+.default{
+ height: 25px;
+  width: 25px;
+  background-color: yellow;
+  border-radius: 50%;
+  display: inline-block;
+  float:left;
+
+}
+.clicked{
+ height: 25px;
+  width: 25px;
+
+  border-radius: 50%;
+  display: inline-block;
+  float:left;
+	background:green;
+}
+
+.column {
+  float: left;
+  width: 70%;
+  padding: 10px;
+  height: 600px; /* Should be removed. Only for demonstration */
+}
+.column1 {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  height: 600px; /* Should be removed. Only for demonstration */
+}
+.column2 {
+  float: left;
+  width: 10%;
+  padding: 10px;
+  height: 600px; /* Should be removed. Only for demonstration */
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+</style>
+<body ng-app="myApp" ng-controller="myController">
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-success" >
+  <a class="navbar-brand">Wiki  </a>
+  <a class="navbar-brand" style="padding-left: 580px;">5G CTO Office </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark " style="background-color: white;">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+	  <li class="nav-item active">
+        <a class="nav-link" href="#home" style="padding-left:450px;color: black;">Home </a>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link" href="#"  data-toggle="modal" data-target="#register" style="color: black;" >Team Members</a>
+      </li>
+      <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" style="color: black;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Projects
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">GTAA</a>
+              <a class="dropdown-item" href="#">CAS</a>
+              <a class="dropdown-item" href="#">Nokia</a>
+              <a class="dropdown-item" href="#">Intel</a>
+            </div>
+          </li>
+      <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" style="color: black;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Demos
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Video Demo</a>
+              <a class="dropdown-item" href="#">Audio Demo</a>
+            </div>
+          </li>
+      <li class="nav-item">
+           <a class="nav-link" href="#" data-toggle="modal" data-target="#about_us" style="color: black;">GitHub</a>
+        </li>
+        <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" style="color: black;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Research Work
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Patents</a>
+                <a class="dropdown-item" href="#">White Paper</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+      <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" style="color: black;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Documents
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Technologies Related</a>
+              <a class="dropdown-item" href="#">Server List</a>
+              <a class="dropdown-item" href="#">Code Review</a>
+            </div>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"  data-toggle="modal" data-target="#help" style="color: black;">Events</a>
+        </li>
+    </ul>
+  </div>
+</nav>
+<hr class="rounded">
+<div class="row">
+  <div class="column1 border-right" style="padding-left:30px;">
+    <div class="card">
+      <h5 class="card-title" style="padding-left:100px;padding-top:10px;">Gallery</h5>
+      <hr>
+    <div class="card-body">
+    <h5>Chai Pe Charcha</h5>
+    <img src="bhailog.jpg" class="card-img-top" alt="...">
+  </div>
+  </div>
+    <br>
+    <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+      <div class="card-header">Upcoming Events</div>
+      <div class="card-body">
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+    </div>
+    <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+      <div class="card-header">Server Status</div>
+      <div class="card-body">
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+  </div>
+</div>
+  <div class="column border-right" style="">
+    <h3 style="padding-left:30px">Wipro enters into 5G collaboration with Telecom Infra Project</h3>
+    <p style="padding-left:30px"> Wipro, the country's third largest software exporter,
+      on Wednesday entered into a collaboration with Telecom Infra Project (TIP) to drive 5G adoption in the
+      global communications service provider and enterprise markets.<br>
+      "Wipro's role will be to provide interoperability lab services and the end-to-end roll-out and
+      transformation of 5G wireless networks with innovative software-based solutions,"
+      the IT major said in the filing to the Bombay Stock Exchange.<br>
+      Launched in February 2016, TIP was started with the goal to accelerate the pace of innovation in the telecom industry.
+      Wipro's work within TIP will promote collaboration between Wipro's 5G strategic initiative, academia and industry
+      thought leaders across communications and Network Equipment Providers(NEP) industries worldwide,
+      the company said in the exchange filing.<br>
+      As a part of its strategic 5G initiative, Wipro is investing significantly in the creation of a TIP-based blueprint
+      for a 5G MNO reference architecture and a next generation 5G operational model. Adding to it, Wipro's collaboration
+      with TIP will also leverage its Engineering NXT offerings, enabling innovation at scale to build products, platforms
+      and wireless technologies for 500+ clients across multiple industries.<br>
+      Commenting on the development, Sanjay Bhartiya, Vice President, Industrial & Engineering Services, Wipro said,
+      "With over 25 years of experience in Telecom Product and Solution engineering, Wipro has been a prominent
+       implementation partner for leading Telecommunications and Communication Service Providers and Network
+       Equipment Providers...Working within TIP, we will be able to deliver the next generation wireless
+       solutions that will have the potential to revolutionize the wireless industry."<br>
+       In 2018, Wipro created its 5G engineering practice and started engaging with customers, research partners, academia,
+       NEPs and CSPs. A 5G lab was set up in Bangalore to incubate some of the potential use cases of 5G. Wipro's 5G labs
+       will be extended throughout 2020 globally, said the company, adding that it has strong IP in the telecom vertical
+       with 173 patents (13 being 5G-related).<br>
+    </p>
+  </div>
+  <div class="column2" style="">
+
+  </div>
+</div>
+</body>
+</html>
